@@ -40,7 +40,7 @@ function appenddata(apiurl) {
 
         document.querySelector(".icon").innerHTML = formattedIconElement;
 
-
+console.log("yolo");
     })
 }
 
