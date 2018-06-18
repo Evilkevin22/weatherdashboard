@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        #item0 ,#item1,#item2,#item3,#item4,#item5 {
+            height: 100px;  /* The height is 400 pixels */
+            width: 50%;  /* The width is the width of the web page */
+        }
+    </style>
     <meta charset="UTF-8">
     <title>Weather test</title>
     <script src="./weather.js"></script>
     <link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
 </head>
 <body>
-<input class="location" placeholder="Entry city name" type="text">
-<button id="locationbutton" type="submit" onclick="locationStringToAPIurl()">Find me some weather</button>
+<input class="location" placeholder="Entry city name" type="text" value="london">
+<button id="locationbutton" type="submit" onclick="findLocation()">Find me some weather</button>
 <span class="icon"></span>
 <span class="name"></span>
 <span class="temp"></span>
 <span class="descrip"></span>
-
-
+<ul class="locationList">
+</ul>
 </body>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALvp--5oiafE2TSU-EICXDsGmYwOjyi-k">
+</script>
 </html>
