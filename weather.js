@@ -39,8 +39,7 @@ function appenddata(apiurl) {
             formattedIconElement = '<i class="' + formattedIconClass + '"></i>';
 
         document.querySelector(".icon").innerHTML = formattedIconElement;
-
-console.log("yolo");
+        
     })
 }
 
