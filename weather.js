@@ -46,7 +46,10 @@ function handleListItemClick(event) {
     if (event) event.preventDefault();
     var clickedItemLocation = event.currentTarget.getAttribute("data-location");
     console.log(clickedItemLocation);
-    locationStringToAPIurl(clickedItemLocation);
+    //locationStringToAPIurl(clickedItemLocation);
+
+    window.location = '/result.html?location=' + clickedItemLocation;
+
 }
 
 
