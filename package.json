@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Evilkevin22/weatherdashboard#readme",
   "devDependencies": {
     "asdf": "^1.2.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
   }
 }
