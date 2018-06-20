@@ -32,7 +32,7 @@ function appenddata(apiurl) {
         var roundtemp = Math.round(jsonfile.main.temp);
 
         document.querySelector(".name").innerHTML = jsonfile.name;
-        document.querySelector(".temp").innerHTML = roundtemp;
+        document.querySelector(".temp").innerHTML = roundtemp + " °";
         document.querySelector(".descrip").innerHTML = jsonfile.weather[0].description;
 
         var prefix = "wi wi-";

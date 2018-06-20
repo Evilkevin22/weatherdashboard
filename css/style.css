@@ -1,4 +1,143 @@
+
+
 #item0, #item1, #item2, #item3, #item4, #item5 {
-    height: 100px; /* The height is 400 pixels */
-    width: 50%; /* The width is the width of the web page */
+    height: 300px;
+    width: 300px;
+    margin: 0 auto 20px auto;
+
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2c6db0), to(#fffdeb)) fixed;
+}
+
+h1 {
+    font-size: 100px;
+    font-weight: 800;
+    margin: 150px auto 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.mainDescrip {
+    line-height: 35px;
+    margin: 50px 0 50px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+input {
+    margin: 0 10px 0 0px;
+    display: block;
+    padding: 5px 20px 5px 20px;
+    color: inherit;
+    font-family: inherit;
+    font-size: 40px;
+    font-weight: inherit;
+    line-height: 10px;
+    border: none;
+    border-radius: 20px;
+}
+
+Input:focus {
+    outline: none;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.75);
+}
+
+#locationbutton {
+    width: 40px;
+    background: url('../img/mag.png');
+    background-repeat: no-repeat;
+    background-size: auto 40px;
+    background-position: center;
+    margin: 0 0 0 10px;
+    border: 0;
+    cursor: pointer;
+
+}
+
+#locationbutton:focus {
+    outline: 0;
+}
+
+li {
+    width: 300px;
+    margin: 0 50px 100px 50px;
+    background: white;
+    padding: 30px 30px 30px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 800;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.75);
+}
+
+.mainDescrip {
+    text-align: center;
+}
+
+.locationList {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    padding: 0;
+}
+
+.searchBox {
+    display: flex;
+    justify-content: center;
+
+}
+
+.resultContainer {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.icon {
+    font-size: 200px;
+    color: white;
+}
+
+.name {
+    font-size: 100px;
+    font-weight: 300;
+    color: black;
+}
+
+.temp {
+    font-size: 100px;
+    font-weight: 700;
+    color: white;
+}
+
+.descrip {
+    font-size: 50px;
+    font-weight: 300;
+    color: black;
+}
+
+@media screen and (max-width: 900px) {
+    li{
+        margin: 0 15px 40px 15px;
+    }
+
+    .mainDescrip{
+        display: none;
+    }
+
+    .searchBox{
+        margin-top: 50px;
+    }
 }

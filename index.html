@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather test</title>
     <link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+
 </head>
 <body>
-
-<input class="location" placeholder="Entry city name" type="text" value="london">
-<button id="locationbutton" type="submit" onclick="findLocation()">Find me some weather</button>
-
+<h1 class="mainTitel">KEVIN'S WEATHERAPP</h1>
+<p class="mainDescrip">Welkom op mijn weather web applicatie.<br />Je kan het weer van een stad/dorp opzoeken door de naam in het input veld te typen.<br />Als je een geldige naam hebt ingevuld en search gebruikt zul je resultaten te zien krijgen.<br />Kies een van de resultaten door ergens binnen zijn wit vak te klikken</p>
+<div class="searchBox">
+<input class="location" placeholder="Enter city name" type="text" value="">
+<button id="locationbutton" type="submit" onclick="findLocation()"></button>
+</div>
 
 <ul class="locationList">
 </ul>
