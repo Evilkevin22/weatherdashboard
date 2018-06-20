@@ -1,10 +1,12 @@
-
-
-#item0, #item1, #item2, #item3, #item4, #item5 {
+.google-map-container {
     height: 300px;
     width: 300px;
     margin: 0 auto 20px auto;
+    cursor: pointer !important;
+}
 
+.google-map-container * {
+    cursor: pointer !important;
 }
 
 body {
@@ -28,6 +30,8 @@ h1 {
 }
 
 input {
+    width: 100%;
+    max-width: 50%;
     margin: 0 10px 0 0px;
     display: block;
     padding: 5px 20px 5px 20px;
@@ -49,7 +53,7 @@ Input:focus {
     width: 40px;
     background: url('../img/mag.png');
     background-repeat: no-repeat;
-    background-size: auto 40px;
+    background-size: 100%;
     background-position: center;
     margin: 0 0 0 10px;
     border: 0;
@@ -90,19 +94,35 @@ li {
     padding: 0;
 }
 
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: .25s ease-in-out all;
+}
+
+.back-button:hover {
+    color: #000;
+    background-color: #fff;
+}
+
 .searchBox {
     display: flex;
     justify-content: center;
-
+    width: 90%;
+    padding: 0 5%;
 }
 
 .resultContainer {
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 100px;
+    height: 100vh;
 }
 
 .icon {
@@ -129,15 +149,24 @@ li {
 }
 
 @media screen and (max-width: 900px) {
-    li{
+    li {
         margin: 0 15px 40px 15px;
     }
 
-    .mainDescrip{
+    h1 {
+        font-size: 50px;
+    }
+
+    input {
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    .mainDescrip {
         display: none;
     }
 
-    .searchBox{
+    .searchBox {
         margin-top: 50px;
     }
 }

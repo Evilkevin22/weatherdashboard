@@ -1,57 +1,58 @@
-/**
- * Get parameter from URL by name
- *
- * @source https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
- *
- * @param name
- * @param url
- * @returns {*}
- */
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
+//closure to prevent javascript from clashing with other javascript
+(function () {
 
-function locationStringToAPIurl(location) {
-    const apicall = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "+&units=metric&appid=bcee471f1029473600bd68a8d14c4304";
-    appenddata(apicall);
-}
+    //get parameter from url
+    var location = getParameterByName('location');
 
-function appenddata(apiurl) {
-    fetch(apiurl).then(function (response) {
-        return response.json();
-    }).then(function (data) {
-        var jsonfile = data;
-        console.log(jsonfile);
+    //get weather
+    getWeatherFromAPI(location).then(function (data) {
 
-        var roundtemp = Math.round(jsonfile.main.temp);
 
-        document.querySelector(".name").innerHTML = jsonfile.name;
-        document.querySelector(".temp").innerHTML = roundtemp + " °";
-        document.querySelector(".descrip").innerHTML = jsonfile.weather[0].description;
+        //round temperature to closest integer
+        var roundtemp = Math.round(data.main.temp);
 
-        var prefix = "wi wi-";
+        //get weather icon attributes
         var hour = new Date().getHours();
-        var time = "";
-        var iconid = jsonfile.weather[0].id;
+        var time = hour > 6 && hour < 20 ? "day-" : "night-";
+        var iconId = data.weather[0].id;
+        var formattedIconClass = "wi wi-owm-" + time + iconId;
 
-        if (hour > 6 && hour < 20) {
-            time = "day-";
-        } else {
-            time = "night-";
-        }
+        //update DOM
+        document.querySelector(".name").innerHTML = data.name;
+        document.querySelector(".temp").innerHTML = roundtemp + " °";
+        document.querySelector(".descrip").innerHTML = data.weather[0].description;
+        document.querySelector(".icon").innerHTML = '<i class="' + formattedIconClass + '"></i>';
+    });
 
-        var formattedIconClass = prefix + "owm-" + time + iconid,
-            formattedIconElement = '<i class="' + formattedIconClass + '"></i>';
-        document.querySelector(".icon").innerHTML = formattedIconElement;
-    })
-}
+    /**
+     * Get parameter from URL by name
+     *
+     * @source https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+     *
+     * @param name
+     * @param url
+     * @returns {*}
+     */
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
 
+    /**
+     * Gets weather from weather API
+     *
+     * @param location {string}
+     * @returns {Promise<Response>}
+     */
+    function getWeatherFromAPI(location) {
+        return fetch("http://api.openweathermap.org/data/2.5/weather?q=" + location + "+&units=metric&appid=bcee471f1029473600bd68a8d14c4304").then(function (response) {
+            return response.json();
+        })
+    }
 
-var urlParameter = getParameterByName('location');
-locationStringToAPIurl(urlParameter);
+})();
