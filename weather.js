@@ -31,7 +31,7 @@
         }
 
         //get weather from API
-        getWeatherFromAPI(document.querySelector('.location').value).then(function (data) {
+        getWeatherFromAPI(location).then(function (data) {
 
             //validate amount of results
             if (data.count === 0) {

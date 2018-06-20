@@ -7,7 +7,6 @@
     //get weather
     getWeatherFromAPI(location).then(function (data) {
 
-
         //round temperature to closest integer
         var roundtemp = Math.round(data.main.temp);
 
