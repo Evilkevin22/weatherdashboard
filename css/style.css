@@ -9,15 +9,22 @@
     cursor: pointer !important;
 }
 
-body {
+body, html {
     font-family: 'Open Sans', sans-serif;
-    background: -webkit-gradient(linear, left top, left bottom, from(#2c6db0), to(#fffdeb)) fixed;
+    background: #6249d6; /* Old browsers */
+    background: -moz-linear-gradient(top, #6249d6 0%, #4f96d4 48%, #4dbac8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #6249d6 0%,#4f96d4 48%,#4dbac8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #6249d6 0%,#4f96d4 48%,#4dbac8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6249d6', endColorstr='#4dbac8',GradientType=0 ); /* IE6-9 */
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: auto;
 }
 
 h1 {
     font-size: 100px;
     font-weight: 800;
-    margin: 150px auto 0 auto;
+    margin: 40px auto 0 auto;
     text-align: center;
     color: white;
 }
@@ -31,7 +38,7 @@ h1 {
 
 input {
     width: 100%;
-    max-width: 50%;
+    max-width: 35%;
     margin: 0 10px 0 0px;
     display: block;
     padding: 5px 20px 5px 20px;
@@ -67,7 +74,7 @@ Input:focus {
 
 li {
     width: 300px;
-    margin: 0 50px 100px 50px;
+    margin: 0 50px 40px 50px;
     background: white;
     padding: 30px 30px 30px 30px;
     cursor: pointer;
@@ -160,6 +167,8 @@ li {
     input {
         font-size: 20px;
         padding: 20px;
+        max-width: 55%;
+        line-height: 5px;
     }
 
     .mainDescrip {
