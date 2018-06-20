@@ -13,9 +13,9 @@ body, html {
     font-family: 'Open Sans', sans-serif;
     background: #6249d6; /* Old browsers */
     background: -moz-linear-gradient(top, #6249d6 0%, #4f96d4 48%, #4dbac8 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #6249d6 0%,#4f96d4 48%,#4dbac8 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #6249d6 0%,#4f96d4 48%,#4dbac8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6249d6', endColorstr='#4dbac8',GradientType=0 ); /* IE6-9 */
+    background: -webkit-linear-gradient(top, #6249d6 0%, #4f96d4 48%, #4dbac8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #6249d6 0%, #4f96d4 48%, #4dbac8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6249d6', endColorstr='#4dbac8', GradientType=0); /* IE6-9 */
     background-repeat: no-repeat;
     height: 100vh;
     overflow: auto;
@@ -39,16 +39,34 @@ h1 {
 input {
     width: 100%;
     max-width: 35%;
-    margin: 0 10px 0 0px;
+    margin: 0 10px 0 0;
     display: block;
-    padding: 5px 20px 5px 20px;
+    padding: 0 20px;
     color: inherit;
     font-family: inherit;
     font-size: 40px;
     font-weight: inherit;
-    line-height: 10px;
+    height: 75px;
+    line-height: 1;
     border: none;
     border-radius: 20px;
+}
+
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 40px;
+    line-height: 1;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+    font-size: 40px;
+    line-height: 1;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+    font-size: 40px;
+    line-height: 1;
+}
+input:-moz-placeholder { /* Firefox 18- */
+    font-size: 40px;
+    line-height: 1;
 }
 
 Input:focus {
@@ -166,11 +184,28 @@ li {
 
     input {
         font-size: 20px;
-        padding: 20px;
+        padding: 0 20px;
         max-width: 55%;
-        line-height: 5px;
+        line-height: 1;
+        height: 50px;
     }
 
+    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-size: 20px;
+        line-height: 1;
+    }
+    input::-moz-placeholder { /* Firefox 19+ */
+        font-size: 20px;
+        line-height: 1;
+    }
+    input:-ms-input-placeholder { /* IE 10+ */
+        font-size: 20px;
+        line-height: 1;
+    }
+    input:-moz-placeholder { /* Firefox 18- */
+        font-size: 20px;
+        line-height: 1;
+    }
     .mainDescrip {
         display: none;
     }
